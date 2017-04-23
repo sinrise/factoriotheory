@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+}
+
+body, header, main, footer {
+  display: flex;
+}
+
+body {
+  flex-direction: column;
+  background-color: #cccccc;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+}
+
+header {
+  flex: 0 0 auto;
+  background-color: #000000;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0 auto;
+  padding: 10px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+nav ul li {
+  margin-right: 10px;
+}
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*# sourceMappingURL=main.css.map */
