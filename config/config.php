@@ -7,10 +7,10 @@
   defined("SITE_PATH") ? null : define("SITE_PATH", SITE_ROOT."source".DS."factoriotheory".DS);
   defined("SITE_URL") ? NULL : define("SITE_URL", "http://localhost:8000/factoriotheory/");
 
-  defined("DB_USER")   ? NULL : define("DB_USER", "root");
-  defined("DB_PASS")   ? NULL : define("DB_PASS", "");
-  // defined("DB_USER")   ? NULL : define("DB_USER", "s252662_2578367");
-  // defined("DB_PASS")   ? NULL : define("DB_PASS", "thisisapw");
+  //defined("DB_USER")   ? NULL : define("DB_USER", "root");
+  //defined("DB_PASS")   ? NULL : define("DB_PASS", "");
+  defined("DB_USER")   ? NULL : define("DB_USER", "s252662_2578367");
+  defined("DB_PASS")   ? NULL : define("DB_PASS", "thisisapw");
 
   defined("DB_SERVER") ? NULL : define("DB_SERVER", "localhost");
   defined("DB_NAME")   ? NULL : define("DB_NAME", "db252662x2578367");
