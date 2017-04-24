@@ -1,9 +1,9 @@
 <?php
-  $area = "home";
-  require_once("../config/config.php");
+  $area = "user";
+  require_once("../../config/config.php");
   include(ADMIN_PATH."admin_header.php");
   if($session->is_logged_in()) {
-    include(ADMIN_PATH."home.php");    
+    include("home.php");    
   } else {
     include(ADMIN_PATH."login.php");
   }

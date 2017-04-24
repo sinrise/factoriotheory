@@ -1,0 +1,38 @@
+amount of beacons = 12
+distribtion efficiency = 0.5
+amount of speed modules = 2
+speed bonus = 50% = 0.5
+
+crafting speed = 1.25
+amount of speed modules = 0
+amount of produc modules = 4
+speed bonus from produc modules = -15% = -0.15
+speed bonus from speed modules = 50% = 0.5
+produc bonus = 40% = 0.4
+
+produc amount = 1
+recipe time = 20
+
+I want per min = 10
+
+The Math:
+
+bonus speed from beacon = amount of beacons * amount of speed modules * speed bonus * distribtion efficiency = 6
+
+bonus speed from machine = ( amount of speed modules * speed bonus from speed modules ) + ( amount of produc modules * speed bonus from produc modules ) = -0.6
+
+final crafting speed bonus = crafting speed * ( bonus speed from beacon + bonus speed from machine ) = 6.75
+
+final crafting speed = crafting speed + final crafting speed bonus = 8
+
+final produc bonus = produc bonus * amount of produc modules = 1.6
+
+final recipe time = recipe time / final crafting speed = 2.5
+
+products per second = produc amount / final recipe time = 0.4
+
+final products per second = final produc bonus + products per second = 0.64
+
+products per min = final products per second * 60 = 38.4
+
+final score = I want per min / products per min = ~0.26

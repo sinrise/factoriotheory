@@ -1,0 +1,25 @@
+#admin {
+  main {
+    color: $black;
+  }
+  h1 { margin: 0 0 20px; }
+  
+  fieldset {
+    border: 1px solid $admin_data-br-c;
+  }
+
+  table { width: 100%; }
+  
+  tr {
+    &:hover { background-color: $admin_table-row-c-h; }
+  }
+
+  th, td { text-align: left; }
+}
+
+.admin_data {
+  height: 40vh;
+  margin: 0 0 20px;
+  overflow-y: scroll;
+  border: 1px solid $admin_data-br-c;
+}

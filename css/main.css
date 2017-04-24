@@ -12,7 +12,7 @@ body, header, main, footer {
 
 body {
   flex-direction: column;
-  background-color: #cccccc;
+  color: #ffffff;
   padding: 0;
   margin: 0;
   min-height: 100%;
@@ -25,6 +25,8 @@ header {
 
 main {
   flex: 1 0 auto;
+  flex-direction: column;
+  background-color: #cccccc;
 }
 
 footer {
@@ -33,20 +35,78 @@ footer {
   background-color: #000000;
   color: #ffffff;
 }
+footer p {
+  margin: 0;
+}
 
+section {
+  color: #000000;
+  padding: 20px;
+}
+
+nav {
+  width: 100%;
+}
 nav ul {
   list-style-type: none;
   display: flex;
+  margin: 0;
+  padding: 0;
 }
 nav ul li {
-  margin-right: 10px;
+  flex: 0 1 auto;
+  white-space: nowrap;
 }
 nav ul li a {
   color: #ffffff;
   text-decoration: none;
+  padding: 5px 10px;
+  display: inline-block;
 }
 nav ul li a:hover {
   color: rgba(255, 255, 255, 0.8);
+}
+nav ul li p {
+  padding: 5px 10px;
+  margin: 0;
+}
+
+.nav {
+  flex: 1 0 auto;
+}
+
+#admin main {
+  color: #000000;
+}
+#admin h1 {
+  margin: 0 0 20px;
+}
+#admin fieldset {
+  border: 1px solid #aaaaaa;
+}
+#admin table {
+  width: 100%;
+}
+#admin tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#admin th, #admin td {
+  text-align: left;
+}
+
+.admin_data {
+  height: 40vh;
+  margin: 0 0 20px;
+  overflow-y: scroll;
+  border: 1px solid #aaaaaa;
+}
+
+#changelog_015 {
+  color: white;
+  background-color: black;
+}
+#changelog_015 h1 {
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,413 @@
+<section>
+<h1>0.15 Changelog pre-release - What to look forward to</h1>
+<p style="color:white;"> <font size = 6> <b> <u>Major features</u> </b> </p> </font>
+
+  <font size = 4>
+
+  <ul style="color:white;">
+  <li>Research overhaul. 4 new science packs: Military, Production, High-tech and space.
+    <ul>
+    <li>Space science packs are generating by launching a rocket.</li>
+      <li>Added infinite researches.</li>
+      </ul>
+    </li>
+  <li>Nuclear power.</li>
+  <li>Blueprint library: Allows for keeping players blueprints between individual game saves and allows sharing blueprints in multiplayer games.</li>
+  </ul>
+  </font>
+
+  <p style="color:white;"> <font size = 6> <b> <u>Features</u> </b> </font> </p>
+
+  <font size = 4>
+
+  <ul style="color:white;">
+  <li>Map Interaction improvements:
+    <ul>
+    <li>Selectable map overlays: logistics networks, pollution, electric network, turret range, etc.</li>
+    <li>Train stations and trains can be opened by clicking them while in the map view.</li>
+    <li>Zoom to the world view from the map. It only shows parts of the map covered by radar or other players though.</li>
+    <li>Custom map markers can be added by the players.</li>
+    </ul>
+  </li>
+  <li>Added wagon for transporting fluids.</li>
+    <ul>
+    <li>One side of pump can connect to the fluid wagon, the other side has to be connected to something else.</li>
+    </ul>
+  <li>When dying in multiplayer you leave behind a body with your items that slowly degrades.</li>
+  <li>Added infinite mining productivity research, each tier increases mining productivity by 2%.</li>
+  <li>Fuel type now affects vehicle acceleration and top speed.</li>
+  <li>Added coal liquefaction oil processing recipe.</li>
+  <li>Added Pipette Tool. Picks up items from your inventory used to build the currently selected entity. For resources it will select the fastest available resource extractor.</li>
+  <li>Mini tutorials. Small missions that explain some of the game mechanics. The current content is a testing sample and it only covers trains.</li>
+  <li>New scenarios: PvP and Wave defense.</li>
+  </ul>
+  </font>
+
+  <p style="color:white;"> <font size = 6> <b> <u>Graphics</u> </b> </font> </p>
+
+  <font size = 4>
+
+  <ul style="color:white;">
+  <li>Added high graphics quality option. In this settings the following list of things will have double resolution:</li>
+    <ul>
+    <li>Car, Trains, Rails, Rail signals, Train stop, Transport belts, Underground belts, Splitters, Pipes, Steam engine, Assembling machines, Oil refinery, Chemical plant, Mining drill, Furnaces, Resources</li>
+    </ul>
+  <li>New ore graphics that makes the ore patches look less tiled.</li>
+  <li>Tweaked the GUI graphics.</li>
+  <li>Decreased the size of the recipe icons on assembling machine by 23%.</li>
+  </ul>
+  </font>
+
+  <p style="color:white;"> <font size = 6> <b> <u>Minor features</u> </b> </font> </p>
+
+  <font size = 4>
+
+  <ul style="color:white;">
+  <li>Fast in game interactions like fast inserting into/from entity and copy paste can be done by dragging instead of having to click one at a time.</li>
+  <li>Build-by-moving for electric poles now accounts for covering all unpowered entities on the way.</li>
+  <li>Fast replacing input piece of underground belt will also fast replace ouput piece if possible.</li>
+  <li>Added support for setting player color from the /color command using Lua syntax: {r=...g=...,b=...,a=...}</li>
+  <li>Added warning for situation when robots don't have storage place to put items in the logistics network.</li>
+  <li>Pumps show their direction in the detailed view.</li>
+  <li>Belts and pipes show correct connections when building a bluprint.</li>
+  <li>Technologies show the required science packs below the icons in the technology GUI list.</li>
+  <li>Technologies are sorted by the science packs needed.</li>
+  <li>Added /screenshot command - takes a screenshot of your current game screen.</li>
+  <li>Added support for equipment grids in the map editor.</li>
+  <li>The build rotation of each blueprint is remembered independently of the general item build rotation.</li>
+  <li>Infinite resource minimal yield is calculated using the initial resource amount and the prototype minimum yield.</li>
+  <li>Added optional filters to the deconstruction planner.</li>
+  <li>Copying from assembling machines to filter inserters will set the filters to the ingredients of the assembling machine recipe.</li>
+  <li>Combat robots and construction robots are maintained between sessions in multiplayer and when changing surfaces.</li>
+  <li>Added reverse-rotate.</li>
+  <li>Offshore pump and generator show pumping speed/fluid usage.</li>
+  <li>Alternative select with blueprints (shift + select) skips the blueprint setup GUI.</li>
+  <li>Mining rails is disabled if mining starts with trains or gates.</li>
+  <li>Toggle fullscreen using Alt + Enter.</li>
+  <li>Added "f"/"force" option to the /players command</li>
+  <li>Added Logistic networks GUI containing a list of all networks and contents with search (opened by the L key).</li>
+  <li>Added /open command - opens another players inventory if you're an admin.</li>
+  <li>Added /alerts command - configures alerts for your player.</li>
+  <li>Added /mute-programmable-speaker command - disables global sounds created by the Programmable Speaker entity.</li>
+  <li>Added /seed command - prints the map seed.</li>
+  <li>Added fluids to the production GUI.</li>
+  <li>Added kill statistics GUI.</li>
+  <li>Added enable/disable all mods button to the mod manager GUI.</li>
+  <li>Added automatic barreling support for all fluids.</li>
+  <li>Cargo wagons can have settings copied from any distance like Locomotives.</li>
+  <li>Added the ability to auto-launch the rocket.</li>
+  <li>Train stops can be colored like trains.</li>
+  <li>Fish can be collected by robots.</li>
+  <li>Extended map generator settings to include an advanced section.</li>
+  <li>Added map generator presets.</li>
+  <li>Show fog-of-war and radar radius when holding radar in cursor.</li>
+  <li>Seed for map creation on the headless server can be specified via map-gen-settings.json</li>
+  <li>Damaged items merge into one stack, the health of the stack will be the average of the items.</li>
+  <li>Added server whitelist support -- see the /whitelist console command.</li>
+  <li>Added /banlist command to operate on the banlist, in addition to the pre-existing /ban and /unban commands.</li>
+  <li>Added "favourite" feature in public games list: Keep your favourite servers at the top of the list.</li>
+  <li>Added /permissions command for managing permissions in a multiplayer game.</li>
+  <li>Added ability to change individual inserter stack size bonuses through GUI or the circuit network.</li>
+  <li>Added ability to export and import blueprints, blueprint books, and deconstruction planners as strings.</li>
+  <li>Server console will print JOIN and LEAVE messages for players joining or leaving.</li>
+  <li>Server console messages that aren't a part of the main log can be logged separately by running the server with the --console-log option.</li>
+  <li>Translatable energy units and SI prefixes (eg. "100 ГВт").</li>
+  <li>Furnaces and assembling machines show the amount of products finished.</li>
+  </ul>
+  </font>
+
+  <p style="color:white;"> <font size = 6> <b> <u>Balancing</u> </b> </font> </p>
+
+  <font size = 4>
+
+  <ul style="color:white;">
+  <li>Increased the rate at which resources grow with distance from the center by 50%.</li>
+  <li>Crude oil balancing: Halved the resource amount on the map</li>
+    <ul>
+    <li>Increased the minimum yield from 10% to 20%</li>
+      <ul>
+        <li>Halved the rate of depletion.</li>
+        <li>Doubled the starting yield.</li>
+        <li>Fixed that the mechanics of increasing richness with distance from start wasn't working for crude oil.</li>
+      </ul>
+    </ul>
+  <li>Increased module inventory size of Chemical plant and oil refinery from 2 to 3.</li>
+  <li>Increased logistic slot/trash slot count from 5 per level to 6 per level.</li>
+  <li>Removed processing unit from the modular armor and portable solar panel recipe.</li>
+  <li>Increased the pump pumping speed 4 times.</li>
+  <li>Reduced the plastic bar recipe requirement of petroleum gas 30 -> 20</li>
+  <li>Reduced the electric engine recipe requirement of lubricant 20 -> 15</li>
+  <li>Reduced the electric furnace recipe requirement of steel 15 -> 10</li>
+  <li>Reduced the steel furnace recipe requirement of steel 8 -> 6</li>
+  <li>Reduced the pumpjack recipe requirement of steel 10 -> 5</li>
+  <li>Reduced crafting time:</li>
+    <ul>
+    <li>Engine unit + electric engine unit: 20 -> 10</li>
+    <li>Pumpjack 10 -> 8</li>
+    <li>Advanced circuit 8 -> 6</li>
+    <li>Processing unit 15 -> 10</li>
+    <li>Cracking recipes 5 -> 3</li>
+    </ul>
+  <li>Increased stack size of stone wall pipe and belts 50 -> 100</li>
+  <li>Increased the maximum power production of steam engine from 510kW to 900kW</li>
+  <li>Doubled the heat capacity of water from 0.1kJ per degree per liter to 0.2kJ.</li>
+  <li>Increased the substation supply area (16X16 to 18X18) and wire reach (16 to 18).</li>
+  </ul>
+  </font>
+
+  <p style="color:white;"> <font size = 6> <b> <u>Combat Balancing</u> </b> </font> </p>
+
+  <font size = 4>
+
+  <ul style="color:white;">
+  <li>Player regains health at a much higher rate, but only after being out of combat for 10 seconds.</li>
+  <li>Discharge defense equipment pushes back, stuns and damages nearby enemies when activated by the remote.</li>
+  <li>Decreased the size of Discharge defense equipment from 3x3 to 2x2.</li>
+  <li>Greatly increased the damage of Personal Laser Defense Equipment.</li>
+  <li>Flamthrower gun has a minimum range of 3.</li>
+  <li>The flames created on ground from the flamethrower significantly increase in duration and damage when more fuel is added to them by firing at the same spot.</li>
+  <li>Increased fire resistance of biter bases.</li>
+  <li>Increased the health of player non-combat buildings.</li>
+  <li>Increased player health from 100 to 250.</li>
+  <li>Increased collected amount and effectiveness of Fish.</li>
+  <li>Increased the damage, range and health of biters worms.</li>
+  <li>Decreased health and resistance of Behemoth biters.</li>
+  <li>Doubled the stack size of all ammos.</li>
+  <li>Tweaked the cost and crafting time of some ammos.</li>
+  <li>Increased the damage of most player ammos. Greatly increased the damage and fire rate of Rockets and Cannon Shells.</li>
+  <li>Increased the collision box of Cannon Shells.</li>
+  <li>Increased Tank health and resistances.</li>
+  <li>Added research for Tank Cannon Shells damage and shooting speed.</li>
+  <li>Tweaked research bonuses and added more end-game research for military upgrades.</li>
+  <li>Greatly increased the damage of Mines. They also stun nearby enemies when they explode.</li>
+  <li>Added uranium rounds magazine and uranium cannon shells.</li>
+  <li>Added flamethrower to the tank.</li>
+  <li>Other minor changes.</li>
+  </ul>
+  </font>
+
+  <p style="color:white;"> <font size = 6> <b> <u>Optimizations</u> </b> </font> </p>
+
+  <font size = 4>
+
+  <ul style="color:white;">
+  <li>Improved performance of mining drills in general and significantly improved performance when mining drills get backed up.</li>
+  <li>Improved performance when tiles are changed due to migration/mod removal.</li>
+  <li>Significantly improved GUI performance for inventories that required scroll bars.</li>
+  <li>Improved GUI performance in general.</li>
+  <li>Improved performance of radars scanning chunks.</li>
+  <li>Improved map generation speed and generation algorithm.</li>
+  <li>Improved game load performance when a large amount of mod data exists in the save.</li>
+  <li>Optimized graph rendering in production statistics window.</li>
+  <li>Improved regenerate entity performance.</li>
+  <li>Improved network map transfer performance.</li>
+  <li>Improved train performance when building/mining rail related entities.</li>
+  <li>Optimized memory requirements for storing tiles under concrete.</li>
+  </ul>
+  </font>
+
+  <p style="color:white;"> <font size = 6> <b> <u>Circuit Network</u> </b> </font> </p>
+
+  <font size = 4>
+
+  <ul style="color:white;">
+  <li>Significantly improved circuit network performance. Up to 25 times less CPU usage and 10% less memory usage.</li>
+  <li>Added the Programmable Speaker: it shows alerts and plays sounds based on circuit network signals. It can be used to make simple songs.</li>
+  <li>Train Stop can output the contents of the stopped train's cargo.</li>
+  <li>Train Stop can be disabled using the circuit network. Trains will skip disabled Train Stops, allowing simple train control.</li>
+  <li>Mining Drills can be turned on and off using the circuit network. They can also output the remaining expected resources.</li>
+  <li>Pumpjacks can be turned on and off using the circuit network. They can also output the current oil mining rate.</li>
+  <li>Added Modulo, Power, Left Bit Shift, Right Bit Shift, Bitwise AND, Bitwise OR and Bitwise XOR to the Arithmetic Combinator.</li>
+  <li>Added >=, <=, != to the Decider Combinator and Circuit Conditions.</li>
+  </ul>
+  </font>
+
+  <p style="color:white;"> <font size = 6> <b> <u>Changes</u> </b> </font> </p>
+
+  <font size = 4>
+
+  <ul style="color:white;">
+  <li>Boilers are more powerful and bigger and have dedicated output for the steam.</li>
+    <ul>
+    <li>Default boilers output steam at the fixed temperature 165.</li>
+    </ul>
+  <li>Removed support of 32 bit systems.</li>
+  <li>Removed alien artifacts and alien science packs from the game completely.</li>
+  <li>Changed bounding box of burner mining drills and pumpjack, so it is possible to walk in between them.</li>
+  <li>Disabled loading of saves before 0.12.0 version (You can use 0.12 to load older saves and re-save them).</li>
+  <li>Changed "small pump" to "pump". Small pumps in old saves will be migrated but they will be misaligned and disconnected from pipes.</li>
+  <li>Train station adds 2000 tiles penalty when path finding, so trains try to avoid stations not related to their path.</li>
+  <li>The map seed is used to generate unique maps instead of just shifting the starting position.</li>
+  <li>The "decorative" entity type has been deprecated and replaced with the prototype type "optimized-decorative".</li>
+  <li>Multiplied all fluid amounts by 10.</li>
+  <li>All default map editor actions are now on left click.</li>
+  <li>Change fluidbox height and base level of boiler, steam engine and pump to improve fluid flow.</li>
+  <li>When the active train stop is removed trains will immediately leave the station if they're waiting at the station.</li>
+  <li>Changed the default comparison type for train conditions to "or".</li>
+  <li>Fast replacing splitters maintains the splitter contents on the new splitter instead of returning it to the player.</li>
+  <li>Research started/changed notifications are only shown when in multiplayer.</li>
+  <li>Crafting is now paused when the results can't be given to the player instead of spilling them on the ground.</li>
+  <li>Changed evolution from global to per force.</li>
+  <li>Disabled mining of vehicles other players are driving.</li>
+  <li>Decreased biter sounds volumes</li>
+  <li>Laser turret projectiles move much faster</li>
+  <li>Roboport construction area changed from 50 to 51 to allow roboports build/deconstruct each other even when there is a 1 tile gap between their logistic areas.</li>
+  <li>Restart button now uses map generation settings from currently loaded save.</li>
+  <li>New rocket silo GUI and visbility button for freeplay and sandbox scenarios.</li>
+  <li>Unified internal name of the 'flame-thrower' to 'flamethrower'.</li>
+  <li>Manual ghost building will mark trees/rocks for deconstruction similar to alt-building blueprints.</li>
+  <li>Trains are now always visible on the map, not only on chunks observed by radars or players.</li>
+  <li>Renamed "armor-making-2" to "heavy-armor".</li>
+  <li>Renamed "armor-making-3" to "power-armor".</li>
+  <li>Renamed "diesel-locomotive" to "locomotive".</li>
+  <li>Increased blueprint book size to hold 1000 blueprints</li>
+  <li>Blueprints, blueprint books and deconstruction planners are obtainable from the library GUI with no crafting cost.</li>
+  <li>Added combinator working, wire hold and wire place sounds.</li>
+  </ul>
+  </font>
+
+  <p style="color:white;"> <font size = 6> <b> <u>Modding</u> </b> </font> </p>
+
+  <font size = 4>
+
+  <ul style="color:white;">
+  <li>Fast cropping of sprite boundaries - it's no longer necessary to delete crop-cache.dat when existing sprites are modified.</li>
+  <li>Utility sprites are now defined fully in the core mod prototypes.</li>
+  <li>Added support for burner type generator-equipment.</li>
+  <li>Added "simple-entity-with-force" and "simple-entity-with-owner" entity types.</li>
+  <li>Boiler has now dynamically specified energy source (as inserter and similar).</li>
+  <li>Added support for mod settings: startup, runtime, and runtime-per-user.</li>
+  <li>Added commandline option --check-unused-prototype-data</li>
+  <li>Added a "nothing" technology modifier type with an "effect_key" property for script-based-effect research.</li>
+  <li>Redundant technology prerequisites are logged when verbose logging is enabled.</li>
+  <li>Changed technology prototype icon_size to default to 32 instead of 64.</li>
+  <li>In any instance an icon isn't 32x32 the icon_size property must be set to the actual size of the (square) icon.</li>
+  <li>Added the ability to have "friend" forces. Friend forces are given unrestricted access to buildings and won't be attacked.</li>
+  <li>Changed container entities to not scale info icons by default + added the optional prototype property "scale_info_icons" to enable scaling.</li>
+  <li>Added property "turret_base_has_direction" to turret entity types. Set it to true if you want to use turn_range property in turret attack_parameters.</li>
+      <ul>
+      <li>This property has to be true for any fluid-turret, because of pipe connections.</li>
+      </ul>
+  <li>Added support for different recipe and technology complexity definitions.</li>
+  <li>Added "item-with-tags" item type that can store any basic arbitrary Lua data.</li>
+  <li>Lamps, roboports, walls, rail signals, and accumulators now accept any signal type (item, fluid, virtual).</li>
+  <li>"animation_speed" property of animation definitions has to be greater than 0.</li>
+  <li>Renamed smoke-with-trigger "action_frequency" property to "action_cooldown".</li>
+  </ul>
+  </font>
+
+  <p style="color:white;"> <font size = 6> <b> <u>Scripting</u> </b> </font> </p>
+
+  <font size = 4>
+
+  <ul style="color:white;">
+  <li>Added "by_script" to on_research_finished.</li>
+  <li>Added "cause" to on_entity_died - the entity that did the killing if available.</li>
+  <li>Added "recipe" to on_player_crafted_item.</li>
+  <li>Added "rocket_silo" to the rocket launched event.</li>
+  <li>Added 4th custom gui root position "goal", which is used in the objectives.</li>
+  <li>Added column_alignments settings in table style.</li>
+  <li>Added LuaBurner - readable off entities and equipment - the burner energy source for the entity.</li>
+  <li>Added LuaCircuitNetwork::network_id read.</li>
+  <li>Added LuaConstantCombiantorControlBehavior::signals_count read + set_signal and get_signal.</li>
+  <li>Added LuaControl::shooting_state, repair_state, picking_state read/write.</li>
+  <li>Added LuaCustomChartTag + LuaForce API to add/find them.</li>
+  <li>Added LuaDecorativePrototype.</li>
+  <li>Added LuaEntity::connect_rolling_stock and disconnect_rolling_stock methods.</li>
+  <li>Added LuaEntity::get_logistic_point().</li>
+  <li>Added LuaEntity::graphics_variation read/write for simple entities and trees.</li>
+  <li>Added LuaEntity::shooting_target read/write for turrets.</li>
+  <li>Added LuaEntity::stickers read. The stickers attached to a given entity.</li>
+  <li>Added LuaEntityPrototype::crafting_speed read.</li>
+  <li>Added LuaEntityPrototype::drawing_box, sticker_box, flags, remains_when_mined, additional_pastable_entities, allow_copy_paste,
+  shooting_cursor_size, created_smoke, created_effect, map_color, friendly_map_color, enemy_map_color, build_base_evolution_requirement read. </li>
+  <li>Added LuaEntityPrototype::get_inventory_size().</li>
+  <li>Added LuaEntityPrototype::ingredient_count read.</li>
+  <li>Added LuaEntityPrototype::module_inventory_size read.</li>
+  <li>Added LuaEquipmentGrid::get_contents, shield, and max_shield.</li>
+  <li>Added LuaFluidBox::owner read + get_capacity and get_connections methods.</li>
+  <li>Added LuaForce::evolution_factor.</li>
+  <li>Added LuaForce::is_chunk_visible().</li>
+  <li>Added LuaForce::set_friend/get_friend.</li>
+  <li>Added LuaGui::children read.</li>
+  <li>Added LuaGuiElement drop-down type.</li>
+  <li>Added LuaGuiElement type "camera".</li>
+  <li>Added LuaGuiElement type "choose-elem-button".</li>
+  <li>Added LuaGuiElement::children read.</li>
+  <li>Added LuaGuiElement::clear to remove all the contents of the element.</li>
+  <li>Added LuaGuiElement::single_line and want_ellipsis for the CustomLabel type.</li>
+  <li>Added LuaInventory::entity_owner, player_owner, and equipment_owner read.</li>
+  <li>Added LuaItemPrototype fuel_category, burnt_result, fuel_acceleration_multiplier, fuel_top_speed_multiplier read.</li>
+  <li>Added LuaLogisticNetwork::provider_points, empty_provider_points, requester_points, full_or_satisfied_requester_points, and storage_points read.</li>
+  <li>Added LuaLogisticPoint - read access to logistic data about provider, storage, and requester points.</li>
+  <li>Added LuaPlayer::add_alert, remove_alert, and get_alerts.</li>
+  <li>Added LuaPlayer::mute_alert, unmute_alert, is_alert_muted, enable_alert, disable_alert, is_alert_enabled.</li>
+  <li>Added LuaPlayer::opened write.</li>
+  <li>Added LuaPlayer::opened_gui_type read.</li>
+  <li>Added LuaRandomGenerator.</li>
+  <li>Added LuaSurface::destroy_decoratives and LuaSurface::create_decoratives.</li>
+  <li>Added LuaSurface::find_logistic_networks_by_construction_area(..).</li>
+  <li>Added LuaSurface::get_trains() and LuaForce::get_trains().</li>
+  <li>Added LuaSurface::regenerate_decorative().</li>
+  <li>Added LuaTrain::has_path, path_end_rail, and path_end_stop read + recalculate_path().</li>
+  <li>Added LuaTransportLine::operator[] and operator#.</li>
+  <li>Added Mod gui script for easy consistent styling of mod buttons and frames within the game.</li>
+  <li>Added mouse info to the gui clicked event.</li>
+  <li>Added on_biter_base_built - fires when biters build bases during migration.</li>
+  <li>Added on_entity_renamed - fires when an entity is renamed either by the player or through script.</li>
+  <li>Added on_gui_selection_state_changed - fires when an item in a drop-down gui element is selected.</li>
+  <li>Added on_market_item_purchased - fires when a player purchases something from a market entity.</li>
+  <li>Added on_player_changed_force - fires when a players force is changed.</li>
+  <li>Added on_player_dropped_item - fires when a player drops an item that results in an item-on-ground entity.</li>
+  <li>Added on_player_mined_entity and on_robot_mined_entity events.</li>
+  <li>Added on_runtime_mod_setting_changed event - fires when a player changes runtime mod settings.</li>
+  <li>Added on_selected_entity_changed - fires when the selected entity for a player changes.</li>
+  <li>Added on_surface_deleted, on_pre_surface_deleted, and on_surface_created events.</li>
+  <li>Added on_train_created event.</li>
+  <li>Added optional "surface" to LuaForce::chart_all().</li>
+  <li>Added optional fields "durability" and "ammo" when using SimpleItemStack definitions.</li>
+  <li>Added optional parameter "return_item_request_proxy" to LuaEntity::revive. If true and revive creates item request proxy, the proxy will be returned as the third value.</li>
+  <li>Added player_index to the entity settings pasted events.</li>
+  <li>Added remote interface functions for the rocket silo gui: add_tracked_item, remove_tracked_item, get_tracked_items, update_gui</li>
+  <li>Added remote interface to freeplay and sandbox scripts.</li>
+  <li>Added support for full copying LuaItemStack in most places that take the SimpleItemStack type.</li>
+  <li>Added support for LuaFlowStatistics read on electric poles.</li>
+  <li>Added support for specifying the "max_range" of a projectile when created through create_entity.</li>
+  <li>Added support for turret orientation read/write through LuaEntity::orientation.</li>
+  <li>Added the ability for mods to register commands.</li>
+  <li>Added the ability to read item_requests from item request proxy entities as well as ghosts.</li>
+  <li>Added the ability to read reach distances off the player or character entity.</li>
+  <li>Changed less_then to less_than in lua GUI progress bar style specification. (<A HREF="https://forums.factorio.com/33196">Nr. 33196</A>)</li>
+  <li>Changed LuaEntity::item_requests to match the docs format.</li>
+  <li>Changed LuaEntity::passenger to work with both character entities and players.</li>
+  <li>Changed LuaEntityPrototype::underground_belt_distance to LuaEntityPrototype::max_underground_distance and changed it to work on both underground pipes and underground belts.</li>
+  <li>Changed LuaForce::clear_chart() to take an optional surface to clear the chart for.</li>
+  <li>Changed LuaSurface::create_entity{name="item-on-ground", stack=...} to accept the same format for item stacks as the rest of the Lua API.</li>
+  <li>Changed the player built event to include the item name used to do the building if possible and include the tags from the "item-with-tags" item if possible.</li>
+  <li>Changed LuaPlayer::clean_cursor to return true if the cursor is now empty.</li>
+  <li>Expanded LuaStyle read/write property support.</li>
+  <li>Fixed LuaSurface::spill_item_stack didn't interpret "enable_looted" parameter properly. (<A HREF="https://forums.factorio.com/38717">Nr. 38717</A>)</li>
+  <li>LuaForce::reset() now resets everything about the force to the default state.</li>
+  <li>Mod events are now fired by the mod dependency order instead of the mod name starting with the scenario script.</li>
+  <li>Moved game.get_event_handler and game.raise_event to "script".</li>
+  <li>Removed Lua.coroutine due to potential exploits.</li>
+  <li>Removed LuaGameScript::evolution_factor.</li>
+  <li>Removed LuaGameScript::save/load.</li>
+  <li>Removed LuaPlayer::build_from_cursor + LuaPlayer::rotate_for_build as they aren't replay/MP safe.</li>
+  <li>Removed LuaSurface::get_tileproperties.</li>
+  <li>Removed LuaForce::item_resource_statistics and LuaForce::fluid_resource_statistics - they've been merged into the production versions.</li>
+  <li>The goal and left gui element has default direction vertical.</li>
+  <li>Utility sprites can be used in the sprite button.</li>
+  </ul>
+  </font>
+
+  <p style="color:white;"> <font size = 6> <b> <u>Command line interface</u> </b> </font> </p>
+
+  <font size = 4>
+
+  <ul style="color:white;">
+  <li>Added map-settings option when creating map, it can be used to specify a file with map settings to be  used instead of the defaults.</li>
+  <li>Added preset option when creating map.</li>
+  </ul>
+  </font>
+</section>

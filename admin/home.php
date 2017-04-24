@@ -1,1 +1,1 @@
-admin area
+<h1>Admin</h1>

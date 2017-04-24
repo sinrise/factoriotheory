@@ -1,6 +1,6 @@
 <?php
-  $area = "home";
-  require_once("../config/config.php");
+  $area = "bounus";
+  require_once("../../config/config.php");
   include(ADMIN_PATH."admin_header.php");
   if($session->is_logged_in()) {
     include(ADMIN_PATH."home.php");    
