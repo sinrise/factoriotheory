@@ -11,6 +11,7 @@
     $product->craft_time = isset($_POST['craft_time']) ? mysql_prep($_POST['craft_time']) : "";
     $product->energy_prod = isset($_POST['energy_prod']) ? mysql_prep($_POST['energy_prod']) : NULL;
     $product->energy_cons = isset($_POST['energy_cons']) ? mysql_prep($_POST['energy_cons']) : NULL;
+    $product->qty_produced = isset($_POST['qty_produced']) ? mysql_prep($_POST['qty_produced']) : NULL;
     $product->is_disp = isset($_POST['is_disp']) ? 1 : 0;
     $msg .= ($product && $product->save()) ? "Product created successfully" : "Product not created";
   }
@@ -33,48 +34,55 @@
   $craft_time = isset($product->craft_time) ? $product->craft_time : "";
   $energy_prod = isset($product->energy_prod) ? $product->energy_prod : NULL;
   $energy_cons = isset($product->energy_cons) ? $product->energy_cons : NULL;
+  $qty_produced = isset($product->qty_produced) ? $product->qty_produced : NULL;
   $is_disp = isset($product->is_disp) ? $product->is_disp : 1;
 ?>
 <section id="user">
   <h1>product</h1>
   <div id="msg"><p><?php echo $msg; ?></p></div>
   <div class="admin_data">
-    <table cellspacing="0" cellpadding="0">
-      <thead>
-        <tr>
-          <th width="6%">id</th>
-          <th width="13%">name</th>
-          <th width="19%">category</th>
-          <th width="10%">craft time</th>
-          <th width="10%">craft speed</th>
-          <th width="10%">energy consumption</th>
-          <th width="10%">energy production</th>
-          <th width="8%">visible</th>
-          <th width="12%" colspan="2">actions</th>
-        </tr>
-      </thead>
-    </table>
-    <table cellspacing="0" cellpadding="0">
-      <tbody>
-<?php
-  foreach($products as $p):
-    $category = Category::find_by_id($p->category_id);
-?>
-        <tr>
-          <td width="6%"><?php echo $p->id; ?></td>
-          <td width="13%"><?php echo $p->name; ?></td>
-          <td width="19%"><?php echo $category->name; ?></td>
-          <td width="10%"><?php echo $p->craft_time; ?></td>
-          <td width="10%"><?php echo $p->craft_speed; ?></td>
-          <td width="10%"><?php echo $p->energy_cons; ?></td>
-          <td width="10%"><?php echo $p->energy_prod; ?></td>
-          <td width="8%"><?php echo $p->is_disp; ?></td>
-          <td width="6%"><a href="?id=<?php echo $p->id; ?>&x">edit</a></td>
-          <td width="6%"><a href="?id=<?php echo $p->id; ?>&x=d">del</a></td>
-        </tr>
-<?php endforeach; ?>
-      </tbody>
-    </table>
+    <div class="admin_table_head">
+      <table cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th width="6%">id</th>
+            <th width="13%">name</th>
+            <th width="16%">category</th>
+            <th width="8%">craft time</th>
+            <th width="8%">craft speed</th>
+            <th width="8%">energy -</th>
+            <th width="8%">energy +</th>
+            <th width="13%">qty produced</th>
+            <th width="8%">visible</th>
+            <th width="12%" colspan="2">actions</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="admin_table_data">
+      <table cellspacing="0" cellpadding="0">
+        <tbody>
+  <?php
+    foreach($products as $p):
+      $category = Category::find_by_id($p->category_id);
+  ?>
+          <tr>
+            <td width="6%"><?php echo $p->id; ?></td>
+            <td width="13%"><?php echo $p->name; ?></td>
+            <td width="16%"><?php echo $category->name; ?></td>
+            <td width="8%"><?php echo $p->craft_time; ?></td>
+            <td width="8%"><?php echo $p->craft_speed; ?></td>
+            <td width="8%"><?php echo $p->energy_cons; ?></td>
+            <td width="8%"><?php echo $p->energy_prod; ?></td>
+            <td width="13%"><?php echo $p->qty_produced; ?></td>
+            <td width="8%"><?php echo $p->is_disp; ?></td>
+            <td width="6%"><a href="?id=<?php echo $p->id; ?>&x">edit</a></td>
+            <td width="6%"><a href="?id=<?php echo $p->id; ?>&x=d">del</a></td>
+          </tr>
+  <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
   </div><!-- end .admin_data -->
   <div class="admin_form">
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
@@ -110,6 +118,10 @@
         <p>
           <label for="energy_prod">energy production</label>
           <input name="energy_prod" id="energy_prod" type="text" value="<?php echo $energy_prod; ?>">
+        </p>
+        <p>
+          <label for="qty_produced">qty produced</label>
+          <input name="qty_produced" id="qty_produced" type="text" value="<?php echo $qty_produced; ?>">
         </p>
         <p>
           <label for="is_disp">

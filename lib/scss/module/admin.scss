@@ -15,11 +15,20 @@
   }
 
   th, td { text-align: left; }
+
+  section { max-height: 100%; }
+}
+
+.admin_table_head {
+  th { background-color: $admin_table-th-bg-c; }
+}
+
+.admin_table_data {
+  overflow-y: scroll;
+  height: 30vh;
 }
 
 .admin_data {
-  height: 40vh;
   margin: 0 0 20px;
-  overflow-y: scroll;
   border: 1px solid $admin_data-br-c;
 }
