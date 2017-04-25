@@ -28,31 +28,33 @@
   <h1>product</h1>
   <div id="msg"><p><?php echo $msg; ?></p></div>
   <div class="admin_data">
-    <table cellspacing="0" cellpadding="0">
-      <thead>
-        <tr>
-          <th width="10%">id</th>
-          <th width="70%">name</th>
-          <th width="8%">visible</th>
-          <th width="12%" colspan="2">actions</th>
-        </tr>
-      </thead>
-    </table>
-    <table cellspacing="0" cellpadding="0">
-      <tbody>
-<?php
-  foreach($categorys as $c):
-?>
-        <tr>
-          <td width="10%"><?php echo $c->id; ?></td>
-          <td width="70%"><?php echo $c->name; ?></td>
-          <td width="8%"><?php echo $c->is_disp; ?></td>
-          <td width="6%"><a href="?id=<?php echo $c->id; ?>&x">edit</a></td>
-          <td width="6%"><a href="?id=<?php echo $c->id; ?>&x=d">del</a></td>
-        </tr>
+    <div class="admin_table_head">
+      <table cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th width="10%">id</th>
+            <th width="70%">name</th>
+            <th width="8%">visible</th>
+            <th width="12%" colspan="2">actions</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="admin_table_data">
+      <table cellspacing="0" cellpadding="0">
+        <tbody>
+<?php foreach($categorys as $c): ?>
+          <tr>
+            <td width="10%"><?php echo $c->id; ?></td>
+            <td width="70%"><?php echo $c->name; ?></td>
+            <td width="8%"><?php echo $c->is_disp; ?></td>
+            <td width="6%"><a href="?id=<?php echo $c->id; ?>&x">edit</a></td>
+            <td width="6%"><a href="?id=<?php echo $c->id; ?>&x=d">del</a></td>
+          </tr>
 <?php endforeach; ?>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
   </div><!-- end .admin_data -->
   <div class="admin_form">
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">

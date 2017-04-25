@@ -28,6 +28,11 @@ class DatabaseObject {
   }
   
   //many
+  public static function find_all_producers() {
+    return static::find_by_sql("SELECT * FROM ".static::$table_name." WHERE category_id = 2 ORDER BY name ASC");
+  }
+  
+  //many
   public static function find_and($wh="id", $eq="1", $and="name", $aeq="1", $ord="id", $dir="ASC") {
     return static::find_by_sql("SELECT * FROM ".static::$table_name." WHERE ".$wh." = ".$eq." AND ".$and." = ".$aeq." ORDER BY ".$ord." ".$dir);
   }

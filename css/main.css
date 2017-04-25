@@ -93,11 +93,21 @@ nav ul li p {
 #admin th, #admin td {
   text-align: left;
 }
+#admin section {
+  max-height: 100%;
+}
+
+.admin_table_head th {
+  background-color: #a9a9a9;
+}
+
+.admin_table_data {
+  overflow-y: scroll;
+  height: 30vh;
+}
 
 .admin_data {
-  height: 40vh;
   margin: 0 0 20px;
-  overflow-y: scroll;
   border: 1px solid #aaaaaa;
 }
 

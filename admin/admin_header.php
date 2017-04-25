@@ -59,7 +59,7 @@
         <?php /*<li><a href="<?php if($admin_nav->link_or != NULL) { echo $admin_nav->link_or; } else { echo SITE_URL."admin/".$admin_nav->name; } ?>"><?php echo $admin_nav->name; ?></a></li> */?>
       <?php //endif; endforeach; ?>
       <?php if($session->is_logged_in()): ?>
-        <li id="admin_status"><?php echo $session_user->username; ?><a href="#" id="logout">log out</a></li>
+        <li id="admin_status"><?php echo $session_user->username; ?><a href="<?php echo ADMIN_URL; ?>logout.php" id="logout">log out</a></li>
       <?php else: ?>
             <li id="admin_status"><a href="#" id="login_link">Login</a></li>
       <?php endif; ?>
