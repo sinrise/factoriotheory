@@ -1,6 +1,6 @@
 <?php
   defined("DS") ? null : define("DS", DIRECTORY_SEPARATOR);
-  defined("SITE_OWNER") ? null : define("SITE_OWNER", "LuziferSenpai");
+  defined("SITE_OWNER") ? null : define("SITE_OWNER", "");
 
   // -SERVER
   error_reporting(E_ALL);
