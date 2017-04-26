@@ -11,7 +11,7 @@
 </section>
 <section>
   <div class="crafting-container">
-  <h3>crafting</h3>
+  <h3>crafting - <span id="tab_name">Logistics</span></h3>
 <?php $categorys = Category::find_all(); ?>
     <div class="categories">
       <div class="tab-heads">
@@ -23,7 +23,7 @@
     <div class="products">
       <div class="tabs">
 <?php foreach($categorys as $k=>$cat): $products = Product::find($wh="category_id", $eq=$cat->id); ?>
-        <div id="tab<?php echo $cat->id; ?>" class="tab<?php echo $k == 0 ? ' active' : ''; ?>" role="tabpanel">
+        <div id="tab<?php echo $cat->id; ?>" class="tab<?php echo $k == 0 ? ' active' : ''; ?>" role="tabpanel" >
           <div class="list products">
 <?php
   foreach($products as $k=>$p):
@@ -32,7 +32,7 @@
 ?>
             <div id="item<?php echo $p->id; ?>" class="item picon picon-<?php echo str_replace(" ", "-", $p->name); ?> up"><?php echo $p->name; ?></div>
             <div class="tip">
-              <p><?php echo $p->qty_produced."x ".$p->name; ?></p>
+              <p><?php echo $p->qty_produced > 1 ? $p->qty_produced."x ".$p->name : $p->name; ?></p>
               <div class="picon picon-stopwatch down"></div><div class="craft-time"><?php echo $p->craft_time; ?></div>
 <?php foreach($ingredients as $k=>$i): $rp = Product::find_by_id($i->ingredient_id); ?>
               <div class="ingredient">

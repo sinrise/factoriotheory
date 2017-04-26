@@ -4,7 +4,7 @@
 // Main Application Tables
 class Product extends DatabaseObject {
 	protected static $table_name="product";
-	protected static $db_fields = array('id', 'name', 'category_id', 'craft_speed', 'craft_time', 'energy_cons', 'energy_prod', 'qty_produced', 'is_disp');
+	protected static $db_fields = array('id', 'name', 'category_id', 'craft_speed', 'craft_time', 'energy_cons', 'energy_prod', 'producer_id', 'qty_produced', 'is_disp');
 	public $id;
 	public $name;
 	public $category_id;
@@ -12,6 +12,7 @@ class Product extends DatabaseObject {
 	public $craft_time;
 	public $energy_cons;
 	public $energy_prod;
+	public $producer_id;
 	public $qty_produced;
 	public $is_disp;
 }
@@ -26,11 +27,10 @@ class Category extends DatabaseObject {
 
 class Recipe extends DatabaseObject {
 	protected static $table_name="recipe";
-	protected static $db_fields = array('id', 'product_id', 'ingredient_id', 'producer_id', 'qty_need', 'is_disp');
+	protected static $db_fields = array('id', 'product_id', 'ingredient_id', 'qty_need', 'is_disp');
 	public $id;
 	public $product_id;
 	public $ingredient_id;
-	public $producer_id;
 	public $qty_need;
 	public $is_disp;
 }
