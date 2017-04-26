@@ -1,0 +1,101 @@
+.crafting-container {
+  display: block;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba($white, 0.15) rgba($black, 0.95) rgba($black, 0.95) rgba($white, 0.15);
+  width: 720px;
+  margin: 0 auto;
+  background-color: $craft-bg-c;
+  text-transform: capitalize;
+  color: $craft-c;
+  padding: 10px;
+  h3 { margin: 0 0 10px 0; }
+  .categories {
+    order: 2;
+    .tab-head {
+      display: inline-block;
+      margin: 0 1px 10px 0;
+      $wh: 68px;
+      width: $wh; height: $wh;
+      a {
+        display: block;
+        width: $wh; height: $wh;
+        text-indent: -9999px;
+        background: url('../images/category-icons.png') no-repeat;
+        &:hover, &:active, &.active {
+          background-position-y: -$wh;
+        }
+        &[data-target="#tab1"] { background-position-x: 0; }
+        &[data-target="#tab2"] { background-position-x: -$wh; }
+        &[data-target="#tab3"] { background-position-x: -$wh - $wh; }
+        &[data-target="#tab4"] { background-position-x: -$wh - $wh - $wh; }
+        &[data-target="#tab5"] { background-position-x: -$wh - $wh - $wh - $wh; }
+      }
+    }
+  }
+  .products {
+    order: 1;
+    &.list {
+      .item {
+        z-index: 1;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.picon {
+  &.item { width: 36px; height: 36px; }
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  &.up { border-color: rgba($gray, 0.5) rgba($black, 0.15) rgba($black, 0.15) rgba($gray, 0.5); }
+  &.down { border-color: rgba($black, 0.15) rgba($gray, 0.5) rgba($gray, 0.5) rgba($black, 0.15); }
+  &::before {
+    z-index: 2;
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &::after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(#696b6b, #4c4d4e);
+  }
+}
+
+.tip {
+  p { text-transform: capitalize; }
+  img { width: 24px; }
+  .picon {
+    width: 28px; height: 28px;
+    display: inline-block;
+    &::before {
+      background-size: 24px;
+      background-position: center;
+    }
+  }
+  .craft-time {
+    display: inline-block;
+    line-height: 28px;
+    vertical-align: top;
+    margin: 0 0 0 10px;
+  }
+  .ingredient {
+    display: block;
+    .picon { display: inline-block; }
+    .name {
+      display: inline-block;
+      line-height: 28px;
+      vertical-align: top;
+      margin: 0 0 0 10px;
+      text-transform: capitalize;
+    }
+  }
+}

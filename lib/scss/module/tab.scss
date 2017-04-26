@@ -1,0 +1,33 @@
+@import "../config/theme";
+
+.tab-heads {
+  a {
+    &.active {
+      background-color: rgba($tab-head-bg-c, 0.8);
+      &::after {
+        border-color: $tab-head-br-c;
+        width: 100%; height: 100%;
+      }
+    }
+  }
+}
+
+.tabs {
+  position: relative;
+  margin: 0 auto;
+  .tab {
+    position: absolute;
+    top: 0; left: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.2s;
+    z-index: 0;
+    &.active {
+      position: relative;
+      opacity: 1;
+      z-index: 100;
+      height: auto;
+      transition: all 0.2s;
+    }
+  }
+}

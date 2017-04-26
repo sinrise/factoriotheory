@@ -1,8 +1,20 @@
 #admin {
+  font-family: sans-serif;
+  a, a:link, a:visited {
+    text-decoration: none;
+    color: $admin-nav-c;
+    &:hover, &:active, &:focus, &:active:focus, &:active:hover, &:hover:focus { color: $admin-nav-c-h; }
+  }
+  h1 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  nav { a, a:link, a:visited { color: $nav-c; &:hover, &:active, &:focus, &:active:focus, &:active:hover, &:hover:focus { color: $nav-c-h; } } }
   main {
+    background: none $admin-bg-c !important;
     color: $black;
   }
-  h1 { margin: 0 0 20px; }
+  section { max-height: 100%; }
   
   fieldset {
     border: 1px solid $admin_data-br-c;
@@ -16,11 +28,13 @@
 
   th, td { text-align: left; }
 
-  section { max-height: 100%; }
 }
 
 .admin_table_head {
-  th { background-color: $admin_table-th-bg-c; }
+  th {
+    background-color: $admin_table-th-bg-c;
+    color: $admin_table-th-c;
+  }
 }
 
 .admin_table_data {

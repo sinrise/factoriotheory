@@ -4,9 +4,8 @@
 
 html { height: 100vh; }
 
-body, header, main, footer { display: flex; }
-
 body {
+  display: flex;
   flex-direction: column;
   color: $white;
   padding: 0; margin: 0;
@@ -22,6 +21,8 @@ main {
   flex: 1 0 auto;
   flex-direction: column;
   background-color: $section-bg-c;
+  background: url('../images/site_bg.jpg') no-repeat;
+  background-position: cover;
 }
 
 footer {
@@ -29,7 +30,13 @@ footer {
   padding: 10px;
   background-color: $footer-bg-c;
   color: $footer-c;
-  p { margin: 0; }
+  p {
+    margin: 0;
+    a, a:link, a:visited {
+      color: $nav-c !important;
+      &:hover, &:active, &:focus, &:active:focus, &:active:hover, &:hover:focus { color: $nav-c-h !important; }
+    }
+  }
 }
 
 section {

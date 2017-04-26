@@ -1,3 +1,4 @@
+@import "dims";
 @import "color";
 
 $header-bg-c: $black;
@@ -8,14 +9,25 @@ $footer-bg-c: $black;
 $link-c:    $black;
 $link-c-h:  rgba($black, 0.8);
 
-$nav-c:   $white;
-$nav-c-h: rgba($white, 0.8);
+$nav-c:   rgba($white, 0.8);
+$nav-c-h: $white;
 
 $section-bg-c:  $gray;
 $section-c:     $black;
 
+$home-c:  $white;
+
+$tab-head-bg-c: $gray;
+$tab-head-br-c: $black;
+
+$craft-bg-c: rgba($gray-dk, 0.80);
+$craft-c: $white;
 
 //admin
+$admin-bg-c: $gray;
+$admin-nav-c: $gray-dk;
+$admin-nav-c-h: $black;
 $admin_data-br-c:     $gray-lt;
 $admin_table-row-c-h: rgba($white, 0.2);
+$admin_table-th-c: $gray;
 $admin_table-th-bg-c: $gray-dk;
