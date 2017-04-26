@@ -1,3 +1,11 @@
+a, a:link, a:visited {
+  text-decoration: none;
+  color: $nav-c;
+  &:hover, &:active, &:focus, &:active:focus, &:active:hover, &:hover:focus {
+    color: $nav-c-h;
+  }
+}
+
 nav {
   width: 100%;
   ul {

@@ -1,3 +1,27 @@
+@import url(jquery.qtip.css);
+html {
+  font-size: 16px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 2.0rem;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.0rem;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -6,11 +30,8 @@ html {
   height: 100vh;
 }
 
-body, header, main, footer {
-  display: flex;
-}
-
 body {
+  display: flex;
   flex-direction: column;
   color: #ffffff;
   padding: 0;
@@ -27,6 +48,8 @@ main {
   flex: 1 0 auto;
   flex-direction: column;
   background-color: #cccccc;
+  background: url("../images/site_bg.jpg") no-repeat;
+  background-position: cover;
 }
 
 footer {
@@ -38,10 +61,28 @@ footer {
 footer p {
   margin: 0;
 }
+footer p a, footer p a:link, footer p a:visited {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+footer p a:hover, footer p a:active, footer p a:focus, footer p a:active:focus, footer p a:active:hover, footer p a:hover:focus, footer p a:link:hover, footer p a:link:active, footer p a:link:focus, footer p a:link:active:focus, footer p a:link:active:hover, footer p a:link:hover:focus, footer p a:visited:hover, footer p a:visited:active, footer p a:visited:focus, footer p a:visited:active:focus, footer p a:visited:active:hover, footer p a:visited:hover:focus {
+  color: #ffffff !important;
+}
 
 section {
   color: #000000;
   padding: 20px;
+}
+
+section#home {
+  color: #ffffff;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+a:hover, a:active, a:focus, a:active:focus, a:active:hover, a:hover:focus, a:link:hover, a:link:active, a:link:focus, a:link:active:focus, a:link:active:hover, a:link:hover:focus, a:visited:hover, a:visited:active, a:visited:focus, a:visited:active:focus, a:visited:active:hover, a:visited:hover:focus {
+  color: #ffffff;
 }
 
 nav {
@@ -58,13 +99,13 @@ nav ul li {
   white-space: nowrap;
 }
 nav ul li a {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   padding: 5px 10px;
   display: inline-block;
 }
 nav ul li a:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
 }
 nav ul li p {
   padding: 5px 10px;
@@ -75,11 +116,221 @@ nav ul li p {
   flex: 1 0 auto;
 }
 
-#admin main {
+form fieldset {
+  font-weight: 600;
+}
+form label {
+  font-weight: 100;
+}
+form p {
+  margin: 0 0 5px 0;
+}
+
+.tip {
+  display: none;
+}
+
+.qtip-default {
+  border: 0;
+  background-color: rgba(64, 64, 64, 0.8);
+  color: #ffffff;
+}
+
+.tab-heads a.active {
+  background-color: rgba(204, 204, 204, 0.8);
+}
+.tab-heads a.active::after {
+  border-color: #000000;
+  width: 100%;
+  height: 100%;
+}
+
+.tabs {
+  position: relative;
+  margin: 0 auto;
+}
+.tabs .tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  opacity: 0;
+  transition: all 0.2s;
+  z-index: 0;
+}
+.tabs .tab.active {
+  position: relative;
+  opacity: 1;
+  z-index: 100;
+  height: auto;
+  transition: all 0.2s;
+}
+
+.list .item {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+.crafting-container {
+  display: block;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.15) rgba(0, 0, 0, 0.95) rgba(0, 0, 0, 0.95) rgba(255, 255, 255, 0.15);
+  width: 720px;
+  margin: 0 auto;
+  background-color: rgba(64, 64, 64, 0.8);
+  text-transform: capitalize;
+  color: #ffffff;
+  padding: 10px;
+}
+.crafting-container h3 {
+  margin: 0 0 10px 0;
+}
+.crafting-container .categories {
+  order: 2;
+}
+.crafting-container .categories .tab-head {
+  display: inline-block;
+  margin: 0 1px 10px 0;
+  width: 68px;
+  height: 68px;
+}
+.crafting-container .categories .tab-head a {
+  display: block;
+  width: 68px;
+  height: 68px;
+  text-indent: -9999px;
+  background: url("../images/category-icons.png") no-repeat;
+}
+.crafting-container .categories .tab-head a:hover, .crafting-container .categories .tab-head a:active, .crafting-container .categories .tab-head a.active {
+  background-position-y: -68px;
+}
+.crafting-container .categories .tab-head a[data-target="#tab1"] {
+  background-position-x: 0;
+}
+.crafting-container .categories .tab-head a[data-target="#tab2"] {
+  background-position-x: -68px;
+}
+.crafting-container .categories .tab-head a[data-target="#tab3"] {
+  background-position-x: -136px;
+}
+.crafting-container .categories .tab-head a[data-target="#tab4"] {
+  background-position-x: -204px;
+}
+.crafting-container .categories .tab-head a[data-target="#tab5"] {
+  background-position-x: -272px;
+}
+.crafting-container .products {
+  order: 1;
+}
+.crafting-container .products.list .item {
+  z-index: 1;
+  display: inline-block;
+}
+
+.picon {
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+}
+.picon.item {
+  width: 36px;
+  height: 36px;
+}
+.picon.up {
+  border-color: rgba(204, 204, 204, 0.5) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(204, 204, 204, 0.5);
+}
+.picon.down {
+  border-color: rgba(0, 0, 0, 0.15) rgba(204, 204, 204, 0.5) rgba(204, 204, 204, 0.5) rgba(0, 0, 0, 0.15);
+}
+.picon::before {
+  z-index: 2;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.picon::after {
+  z-index: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#696b6b, #4c4d4e);
+}
+
+.tip p {
+  text-transform: capitalize;
+}
+.tip img {
+  width: 24px;
+}
+.tip .picon {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+}
+.tip .picon::before {
+  background-size: 24px;
+  background-position: center;
+}
+.tip .craft-time {
+  display: inline-block;
+  line-height: 28px;
+  vertical-align: top;
+  margin: 0 0 0 10px;
+}
+.tip .ingredient {
+  display: block;
+}
+.tip .ingredient .picon {
+  display: inline-block;
+}
+.tip .ingredient .name {
+  display: inline-block;
+  line-height: 28px;
+  vertical-align: top;
+  margin: 0 0 0 10px;
+  text-transform: capitalize;
+}
+
+#admin {
+  font-family: sans-serif;
+}
+#admin a, #admin a:link, #admin a:visited {
+  text-decoration: none;
+  color: #404040;
+}
+#admin a:hover, #admin a:active, #admin a:focus, #admin a:active:focus, #admin a:active:hover, #admin a:hover:focus, #admin a:link:hover, #admin a:link:active, #admin a:link:focus, #admin a:link:active:focus, #admin a:link:active:hover, #admin a:link:hover:focus, #admin a:visited:hover, #admin a:visited:active, #admin a:visited:focus, #admin a:visited:active:focus, #admin a:visited:active:hover, #admin a:visited:hover:focus {
   color: #000000;
 }
 #admin h1 {
-  margin: 0 0 20px;
+  margin: 0;
+  font-size: 1.2rem;
+}
+#admin nav a, #admin nav a:link, #admin nav a:visited {
+  color: rgba(255, 255, 255, 0.8);
+}
+#admin nav a:hover, #admin nav a:active, #admin nav a:focus, #admin nav a:active:focus, #admin nav a:active:hover, #admin nav a:hover:focus, #admin nav a:link:hover, #admin nav a:link:active, #admin nav a:link:focus, #admin nav a:link:active:focus, #admin nav a:link:active:hover, #admin nav a:link:hover:focus, #admin nav a:visited:hover, #admin nav a:visited:active, #admin nav a:visited:focus, #admin nav a:visited:active:focus, #admin nav a:visited:active:hover, #admin nav a:visited:hover:focus {
+  color: #ffffff;
+}
+#admin main {
+  background: none #cccccc !important;
+  color: #000000;
+}
+#admin section {
+  max-height: 100%;
 }
 #admin fieldset {
   border: 1px solid #aaaaaa;
@@ -93,12 +344,10 @@ nav ul li p {
 #admin th, #admin td {
   text-align: left;
 }
-#admin section {
-  max-height: 100%;
-}
 
 .admin_table_head th {
-  background-color: #a9a9a9;
+  background-color: #404040;
+  color: #cccccc;
 }
 
 .admin_table_data {

@@ -1,1 +1,18 @@
 $screen-xs: 425px;
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 1440px;
+$screen-xl: 1920px;
+$width-xs: 280px;
+$width-sm: 400px;
+$width-md: 740px;
+$width-lg: 960px;
+$width-xl: 1280px;
+
+$widths: (
+  $screen-xl: $width-xl,
+  $screen-lg: $width-lg,
+  $screen-md: $width-md,
+  $screen-sm: $width-sm,
+  $screen-xs: $width-xs
+);

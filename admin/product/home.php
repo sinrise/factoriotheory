@@ -25,7 +25,7 @@
   }
 
   // view
-  $products = Product::find_all();
+  $products = Product::find_all($ord="name");
   $categorys = Category::find_all();
   $productid = isset($product->id) ? $product->id : NULL;
   $name = isset($product->name) ? $product->name : "";
