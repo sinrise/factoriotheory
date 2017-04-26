@@ -6,4 +6,8 @@
   border:  0;
   background-color: $craft-bg-c;
   color: $white;
+  text-transform: capitalize;
+  .qtip-content {
+    padding: 10px;
+  }
 }

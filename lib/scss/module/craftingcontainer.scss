@@ -71,11 +71,17 @@
 }
 
 .tip {
-  p { text-transform: capitalize; }
+  padding: 0;
+  p {
+    margin: 0 0 5px 0;
+    text-transform: capitalize;
+    line-height: 1rem;
+  }
   img { width: 24px; }
   .picon {
     width: 28px; height: 28px;
     display: inline-block;
+    margin: 5px 0 0 0;
     &::before {
       background-size: 24px;
       background-position: center;

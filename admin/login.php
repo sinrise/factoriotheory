@@ -1,9 +1,8 @@
-<?php include('../config/config.php'); ?>
 <section id="login">
 <h1>Login</h1>
 <?php
   $message = "";
-  if (isset($_POST['submit']) && $_GET['auth'] == 0) {
+  if (isset($_POST['submit'])) {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
     $hashed_password = sha1($password);
@@ -13,7 +12,7 @@
     if ($found_user) {
       $session->login($found_user);
       log_action('Login', "{$found_user->username} logged in.");
-      redirect_to(ADMIN_URL);
+      redirect_to("index.php");
     } else {
       $message .= "Username/password combination incorrect.";
     }
@@ -22,7 +21,7 @@
     $hashed_password = "";
   }
 ?>
-<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>?auth=0" method="post">
+<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
     <fieldset>
         <?php if($message != "") { echo "<p class=\"message\">{$message}</p>"; } ?>
         <p>
